@@ -6,6 +6,7 @@ plugins {
 	kotlin("jvm") version "1.5.31"
 	kotlin("plugin.spring") version "1.5.31"
 	kotlin("plugin.jpa") version "1.5.31"
+	id("info.solidsoft.pitest") version "1.7.0"
 }
 
 group = "pl.monochromatic.dolphins"
@@ -22,8 +23,15 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("org.apache.commons:commons-csv:1.9.0")
+
 	runtimeOnly("com.h2database:h2")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+pitest {
+	junit5PluginVersion.set("0.15")// = '0.15'    //or 0.14 for Junit Jupiter 5.7 (JUnit Platform 1.7)
 }
 
 tasks.withType<KotlinCompile> {
