@@ -17,7 +17,7 @@ class UserService @Autowired constructor(
     private val rsaEncryptor: RsaEncryptor,
 ) {
     fun createUser(user: User): User {
-        val encodedPassword = rsaEncryptor.encrypt(user.password)
+        val encodedPassword = user.password?.let { rsaEncryptor.encrypt(it) }
         user.password = encodedPassword
         return when (user.role) {
             Role.DOCTOR -> userRepository.save(user)

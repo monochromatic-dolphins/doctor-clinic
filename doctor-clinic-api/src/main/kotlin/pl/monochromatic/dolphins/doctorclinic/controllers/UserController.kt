@@ -21,18 +21,18 @@ class UserController @Autowired constructor(
     }
 
     @PostMapping("/login")
-    fun login(@RequestBody loginRequest: LoginRequest): ResponseEntity<CredentialsResponse> {
+    fun login(@RequestBody loginRequest: LoginRequest): ResponseEntity<User> {
         val user = userService.login(loginRequest)
         if (user?.id != null)
-            return ResponseEntity.ok(CredentialsResponse(user.id, user.role))
+            return ResponseEntity.ok(user)
         return ResponseEntity.badRequest().build()
     }
 
     @PostMapping("/register")
-    fun register(@RequestBody registerRequest: RegisterRequest): ResponseEntity<CredentialsResponse> {
+    fun register(@RequestBody registerRequest: RegisterRequest): ResponseEntity<User> {
         val createdUser = userService.register(registerRequest)
         createdUser.id?.let {
-            return ResponseEntity.ok(CredentialsResponse(it, createdUser.role))
+            return ResponseEntity.ok(createdUser)
         }
         return ResponseEntity.badRequest().build()
     }

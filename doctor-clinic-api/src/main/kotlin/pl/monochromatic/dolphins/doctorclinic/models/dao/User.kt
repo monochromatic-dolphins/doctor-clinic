@@ -21,7 +21,7 @@ class User(
     val login: String,
 
     @Column(length = 512)
-    var password: String,
+    var password: String?,
 
     val role: Role,
 
