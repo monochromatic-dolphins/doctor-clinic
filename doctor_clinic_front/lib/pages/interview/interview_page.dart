@@ -91,7 +91,7 @@ class _InterviewPageState extends State<InterviewPage> {
                   _buildRow(context, 'BMI:', _bmiController,
                       inputType: FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}'))),
                   _buildRow(context, 'Diabetes pedigree:', _diabetesPedigreeController,
-                      inputType: FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}'))),
+                      inputType: FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,3}'))),
                   const Spacer(),
                   ElevatedButton(
                       onPressed: () async {
