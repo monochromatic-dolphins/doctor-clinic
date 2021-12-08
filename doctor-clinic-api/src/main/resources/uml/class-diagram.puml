@@ -1,0 +1,48 @@
+﻿@startuml
+class UserController {
+    - _userService:UserService
+    + getAllPatients():ResponseEntity<List<User>>
+    + login(loginRequest: LoginRequest):ResponseEntity<User>
+    + register(registerRequest: RegisterRequest):ResponseEntity<User>
+}
+
+class LoginRequest {
+    + login:String
+    + password:String
+}
+
+class RegisterRequest {
+    + login:String
+    + password:String
+    + name:String
+    + surname:String
+}
+
+class UserService {
+    - userRepository:UserRepository
+    - rsaEncryptor:RsaEncryptor
+    + createUser(user:User):User
+    + createUsers(vararg users: User):Unit
+    + getAllPatients():List<User>
+    + login(loginRequest:LoginRequest):User?
+    + register(registerRequest: RegisterRequest): User
+    + getUser(id:Int):User?
+    + updateUser(user: User):User
+}
+
+interface UserRepository {
+    + findByLogin(login:String):User?
+    + findAllByRole(role:Role):List<User>
+}
+
+class User {
+    + id:Int?
+    + name:String
+    + surname:String
+    + login:String
+    + password:String?
+    + role:Role
+    + medicalInterview:MedicalInterview
+    + diagnosis:Diagnosis
+}
+@enduml

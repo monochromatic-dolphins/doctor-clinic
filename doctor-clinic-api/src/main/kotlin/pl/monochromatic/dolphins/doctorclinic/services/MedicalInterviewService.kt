@@ -5,12 +5,9 @@ import org.springframework.stereotype.Service
 import pl.monochromatic.dolphins.doctorclinic.ai.KnnService
 import pl.monochromatic.dolphins.doctorclinic.models.ai.MedicalData
 import pl.monochromatic.dolphins.doctorclinic.models.dao.MedicalInterview
-import pl.monochromatic.dolphins.doctorclinic.repositories.DiagnosisRepository
-import pl.monochromatic.dolphins.doctorclinic.repositories.MedicalInterviewRepository
 
 @Service
 class MedicalInterviewService @Autowired constructor(
-    private val medicalInterviewRepository: MedicalInterviewRepository,
     private val userService: UserService,
     private val knnService: KnnService
 ) {

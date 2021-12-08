@@ -5,7 +5,6 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import pl.monochromatic.dolphins.doctorclinic.models.dao.User
 import pl.monochromatic.dolphins.doctorclinic.models.dto.LoginRequest
-import pl.monochromatic.dolphins.doctorclinic.models.dto.CredentialsResponse
 import pl.monochromatic.dolphins.doctorclinic.models.dto.RegisterRequest
 import pl.monochromatic.dolphins.doctorclinic.services.UserService
 

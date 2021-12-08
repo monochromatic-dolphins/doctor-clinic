@@ -6,9 +6,6 @@ import org.springframework.boot.ApplicationRunner
 import org.springframework.stereotype.Component
 import pl.monochromatic.dolphins.doctorclinic.models.dao.User
 import pl.monochromatic.dolphins.doctorclinic.models.enums.Role
-import pl.monochromatic.dolphins.doctorclinic.repositories.DiagnosisRepository
-import pl.monochromatic.dolphins.doctorclinic.repositories.MedicalInterviewRepository
-import pl.monochromatic.dolphins.doctorclinic.repositories.UserRepository
 import pl.monochromatic.dolphins.doctorclinic.services.DiagnosisService
 import pl.monochromatic.dolphins.doctorclinic.services.MedicalInterviewService
 import pl.monochromatic.dolphins.doctorclinic.services.UserService
